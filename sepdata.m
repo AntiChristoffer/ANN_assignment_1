@@ -21,17 +21,16 @@ targets = [targetsA, targetsB];
 
 %disp(targets);
 
-fprintf('Before permutation')
-disp(patterns);
+%fprintf('Before permutation')
+%disp(patterns);
 permute = randperm(200);
 patterns = patterns(:, permute);
-fprintf('After permutation');
-disp(patterns);
+%fprintf('After permutation');
+%disp(patterns);
 targets = targets(:, permute);
 %disp(targets);
-%{
+
 plot(patterns(1, find(targets>0)),
 patterns(2, find(targets>0)), '*', 
 patterns(1, find(targets<0)),
 patterns(2, find(targets<0)), '+');
-%}
