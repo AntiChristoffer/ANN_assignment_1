@@ -1,0 +1,16 @@
+    clc;
+    
+    x=[-5:1:5]';
+    y=x;
+    z=exp(-x.*x*0.1) * exp(-y.*y*0.1)' - 0.5;
+    
+    mesh (x, y, z);
+
+    [xrow, xcol] = size(x);
+    [yrow, ycol] = size(y);
+    
+    ndata = xrow*yrow;
+    
+    targets = reshape (z, 1, ndata);
+    [xx, yy] = meshgrid (x, y);
+    patterns = [reshape(xx, 1, ndata); reshape(yy, 1, ndata)];

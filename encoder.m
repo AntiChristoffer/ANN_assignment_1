@@ -1,0 +1,13 @@
+clc;
+i = eye(8) * 2 - 1;
+patterns = [i,i,i,i,i...
+            i,i,i,i,i...
+            i,i,i,i,i...
+            i,i,i,i,i...
+            i,i,i,i,i];
+targets = patterns;
+
+
+permute = randperm(200);
+patterns = patterns(:, permute);
+targets = targets(:, permute);
